@@ -17,7 +17,6 @@ TriggerEvent('gridsystem:registerMarker', {
 		TriggerEvent('nkz_sceglilavoro')
 	end
 })
-
 -- GRID DEL DEPOSITA VEICOLO --
 TriggerEvent('gridsystem:registerMarker', {
 	name = 'depositaveh',  
@@ -32,8 +31,8 @@ TriggerEvent('gridsystem:registerMarker', {
 	control = 'E',
 	action = function()
         if lavoro then
-        local veh = GetVehiclePedIsIn(PlayerPedId(), false)
-        DeleteEntity(veh)
+            local veh = GetVehiclePedIsIn(PlayerPedId(), false)
+            DeleteEntity(veh)
         else
             ESX.ShowNotification('Non puoi depositare il veicolo se non stai lavorando')
         end
