@@ -3,21 +3,6 @@ ESX = exports.es_extended:getSharedObject()
 lavoro = false
 incorso = false
 
--- GRID DEL MENU LAVORI -- 
-TriggerEvent('gridsystem:registerMarker', {
-	name = 'menulavori',  
-	pos = vector3(1200.4458007813,-1277.3627929688,35.462917327881),
-	scale = vector3(1.5, 1.5, 1.5),
-	size = vector3(2.5, 2.5, 2.5),
-	msg = '~b~[E] ~w~Menu lavori',
-	type = -1,
-	show3D = true,
-    control = 'E',
-	action = function()
-		TriggerEvent('nkz_sceglilavoro')
-	end
-})
-
 -- GRID DEL DEPOSITA VEICOLO --
 TriggerEvent('gridsystem:registerMarker', {
 	name = 'depositaveh',  
@@ -217,26 +202,6 @@ Citizen.CreateThread(function()
     end
 end)
 
--- GRID IMPORT -- 
-Citizen.CreateThread(function()
-    for nkz,nikquz in pairs(Config.CoordsImport) do
-        TriggerEvent('gridsystem:registerMarker', {
-            name = 'import'..nikquz.x,
-            pos = vector3(nikquz.x, nikquz.y, nikquz.z),
-            size = vector3(2.1,2.1,2.1),
-            scale = vector3(0.7, 0.7, 0.7),
-            color =  { r = 40, b = 255, g = 140 },
-            drawDistance = 6.0,
-            msg = 'Premi ~INPUT_CONTEXT~ per acquistare oggetti',
-            control = 'E',
-            type = 20,
-            action = function()
-                TriggerEvent('nkz_menuimport')
-            end,
-        })
-    end
-end)
-
 -- MENU SCELTA LAVORO -- 
 RegisterNetEvent('nkz_sceglilavoro')
 AddEventHandler('nkz_sceglilavoro', function()
@@ -305,13 +270,6 @@ AddEventHandler('nkz_menuimport', function()
         end
     )
 end)
-
--- BLIP CENTRO IMPIEGHI -- 
-nkzblip = AddBlipForCoord(1200.6398925781,-1274.7916259766)
-SetBlipSprite(nkzblip, 685)
-BeginTextCommandSetBlipName("STRING")
-AddTextComponentString("Centro impieghi")
-EndTextCommandSetBlipName(nkzblip)
 
 -- ANNULLA LAVORO --    
 NKZ_Annullalavoro = function()
