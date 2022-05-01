@@ -140,7 +140,7 @@ AddEventHandler('nkz_cercapesci', function()
 	elseif random == 3 then
 		xPlayer.addInventoryItem('pescespada', 1)
 	elseif random == 4 then
-		xPlayer.addInventoryItem('tonno', 1)
+		xPlayer.addInventoryItem('lattina', 1)
 	elseif random == 5 then
 		xPlayer.addInventoryItem('sardina', 1)
 	elseif random == 6 then
