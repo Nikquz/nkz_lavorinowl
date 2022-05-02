@@ -9,13 +9,11 @@ AddEventHandler('nkz_viticoltore', function()
 	local c = GetEntityCoords(ped)
 	local cc = vector3(-1734.2380371094,2379.7438964844,47.770603179932)
 	local dist = #(c - cc)
-	if uva.count < 100 then
-		if dist > 50 then
+	if dist > 50 then
 			print("^8ID: ["..source.."] "..GetPlayerName(source).." Cheater, è stato kickato, ha provato a triggerare nkz_viticoltore")
 			DropPlayer(source, 'Non si fotte con noxon development')
-		else
-			xPlayer.addInventoryItem('grappoloduva', 1)	
-		end
+	elseif uva.count < 100 then
+		xPlayer.addInventoryItem('grappoloduva', 1)	
 	else
 		xPlayer.showNotification('Hai raggiunto il limite massimo di raccolta di grappoli d\'uva')
 	end
