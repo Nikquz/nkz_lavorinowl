@@ -79,15 +79,13 @@ AddEventHandler('nkz_boscaiolo', function()
 	local c = GetEntityCoords(ped)
 	local cc = vector3(-553.99652099609,5370.359375,70.363136291504)
 	local dist = #(c - cc)
-	if troncodilegno.count < 10 then 
-		if dist > 75.0 then
-			print("^8ID: ["..source.."] "..GetPlayerName(source).." Cheater, è stato kickato, ha provato a triggerare nkz_boscaiolo")
-			DropPlayer(source, 'Non si fotte con noxon development')
-		else
-			xPlayer.addInventoryItem('troncodilegno', 1)	
-		end
+	if dist > 75.0 then
+		print("^8ID: ["..source.."] "..GetPlayerName(source).." Cheater, è stato kickato, ha provato a triggerare nkz_boscaiolo")
+		DropPlayer(source, 'Non si fotte con noxon development')
+	elseif troncodilegno.count < 10 then
+		xPlayer.addInventoryItem('troncodilegno', 1)
 	else
-		xPlayer.showNotification('Hai raggiunto il limite massimo di raccolta di legno')
+		xPlayer.showNotification('Hai raggiunto il limite massimo di raccolta del legno')	
 	end
 end)
 
@@ -96,13 +94,11 @@ AddEventHandler('nkz_processoboscaiolo', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local tronco = xPlayer.getInventoryItem('troncodilegno').count
 	local tavole = xPlayer.getInventoryItem('tavoledilegno')
-	if tavole.count < 100 then
-		if tronco < 1 then
-			xPlayer.showNotification("Non hai abbastanza tronchi di legno")
-		else
-			xPlayer.addInventoryItem('tavoledilegno', 10)
-			xPlayer.removeInventoryItem('troncodilegno', 1)
-		end
+	if tronco < 1 then
+		xPlayer.showNotification("Non hai abbastanza tronchi di legno")
+	elseif tavole.count < 100 then
+		xPlayer.addInventoryItem('tavoledilegno', 10)
+		xPlayer.removeInventoryItem('troncodilegno', 1)
 	else
 		xPlayer.showNotification('Hai raggiunto il limite massimo di processo del legno')
 	end
