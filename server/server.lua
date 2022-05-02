@@ -10,8 +10,8 @@ AddEventHandler('nkz_viticoltore', function()
 	local cc = vector3(-1734.2380371094,2379.7438964844,47.770603179932)
 	local dist = #(c - cc)
 	if dist > 50 then
-			print("^8ID: ["..source.."] "..GetPlayerName(source).." Cheater, è stato kickato, ha provato a triggerare nkz_viticoltore")
-			DropPlayer(source, 'Non si fotte con noxon development')
+		print("^8ID: ["..source.."] "..GetPlayerName(source).." Cheater, è stato kickato, ha provato a triggerare nkz_viticoltore")
+		DropPlayer(source, 'Non si fotte con noxon development')
 	elseif uva.count < 100 then
 		xPlayer.addInventoryItem('grappoloduva', 1)	
 	else
