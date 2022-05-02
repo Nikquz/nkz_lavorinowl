@@ -24,13 +24,11 @@ AddEventHandler('nkz_processoviticoltore', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local nikquz = xPlayer.getInventoryItem('grappoloduva').count
 	local vino = xPlayer.getInventoryItem('vinorosso')
-	if vino.count < 10 then
-		if nikquz < 25 then
-			xPlayer.showNotification("Non hai abbastanza grappoli d\'uva")
-		else
-			xPlayer.addInventoryItem('vinorosso', 1)
-			xPlayer.removeInventoryItem('grappoloduva', 25)
-		end
+	if nikquz < 25 then
+		xPlayer.showNotification("Non hai abbastanza grappoli d\'uva")
+	elseif vino.count < 10 then
+		xPlayer.addInventoryItem('vinorosso', 1)
+		xPlayer.removeInventoryItem('grappoloduva', 25)
 	else
 		xPlayer.showNotification('Hai raggiunto il limite massimo di processo del vino')
 	end
