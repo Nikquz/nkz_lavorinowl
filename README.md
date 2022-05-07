@@ -1,3 +1,5 @@
+[ESX]
+
 Salve ragazzi , questa è ufficialmente la mia prima release , molto semplice ma ben strutturata
 
 Potete trovarmi su discord : Nikquz®#9748
