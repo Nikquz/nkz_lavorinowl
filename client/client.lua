@@ -518,7 +518,7 @@ AddEventHandler("nkz_iniziapescare", function()
         if not incorso then
             incorso = true
             FreezeEntityPosition(PlayerPedId(), true)
-            TaskStartScenarioInPlace(GetPlayerPed(-1), "WORLD_HUMAN_STAND_FISHING", 0, true)
+            TaskStartScenarioInPlace(PlayerPedId(), "WORLD_HUMAN_STAND_FISHING", 0, true)
             Citizen.Wait(15000)
             ClearPedTasks(PlayerPedId())
             ClearAreaOfObjects(GetEntityCoords(PlayerPedId()), 2.0, 0)
