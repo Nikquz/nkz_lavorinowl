@@ -4,6 +4,8 @@ Salve ragazzi , questa è ufficialmente la mia prima release , molto semplice ma
 
 Potete trovarmi su discord : Nikquz®#9748
 
+Se vi butta fuori senza motivo attivato onesync tramite cfg o txadmin per chi lo usa
+
 NOXON DEVELOPMENT : https://discord.gg/dA2wNhYfs7
 
 REQUISITI : 
